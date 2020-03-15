@@ -700,3 +700,5 @@ let mock = [
     amount: '$203.00'
   }
 ]
+
+export default mock;

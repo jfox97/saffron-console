@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="wrapper">
+      <TransactionView :transactions="transactions" />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import TransactionView from "../components/TransactionView.vue"
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    TransactionView
+  },
+  computed: {
+    transactions() {
+      return this.$root.$data.transactions;
+    }
   }
 }
 </script>
+
+<style scoped>
+.wrapper {
+  margin: 40px auto;
+  width: 1200px;
+}
+</style>
