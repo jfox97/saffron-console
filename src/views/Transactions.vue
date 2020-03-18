@@ -7,6 +7,11 @@
       <input type="text" placeholder="Amount" v-model="amount" />
       <button type="submit">Add</button>
     </form>
+    <div id="date-filter">
+      <label>Filter transactions:</label>
+      <input type="date" v-model="minDate" /> &mdash;
+      <input type="date" v-model="maxDate" />
+    </div>
     <TransactionView :transactions="transactions" />
   </div>
 </template>
@@ -23,12 +28,19 @@ export default {
     return {
       description: "",
       category: "",
-      amount: ""
+      amount: "",
+      minDate: "2020-02-01",
+      maxDate: "2020-02-29"
     }
   },
   computed: {
     transactions() {
-      return this.$root.$data.transactions;
+      let minDate = this.minDate
+      let maxDate = this.maxDate
+      return this.$root.$data.transactions.filter(function(transaction) {
+        if (transaction.date >= minDate && transaction.date <= maxDate)
+          return transaction;
+      });
     }
   },
   methods: {
@@ -83,6 +95,7 @@ export default {
     border: 1px solid #ddd;
     border-radius: 3px;
     font-size: 18px;
+    color: 484e61;
   }
 
   form button {
@@ -98,5 +111,20 @@ export default {
   form button:hover {
     cursor: pointer;
     background-color: #e02800;
+  }
+
+  #date-filter {
+    text-align: left;
+    margin: 10px;
+  }
+
+  #date-filter input {
+    margin: 0px 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #484e61;
   }
 </style>

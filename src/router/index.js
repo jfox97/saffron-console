@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Transactions from '../views/Transactions.vue'
-import Budget from '../views/Transactions.vue'
+import Budget from '../views/Budget.vue'
 
 Vue.use(VueRouter)
 
