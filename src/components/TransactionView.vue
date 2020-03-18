@@ -48,7 +48,7 @@ table {
 
 th {
   color: white;
-  background-color: #e02800;
+  background-color: #EC4E20;
 }
 
 th, td {
