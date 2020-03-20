@@ -39,6 +39,7 @@ export default {
           spending: spendingString
         });
       }
+      totalSpending.sort((a, b) => (a.category > b.category) ? 1 : -1);
       return totalSpending;
     }
   }

@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="transaction in transactions" :key="transaction.id">
+      <tr v-for="transaction in sortedTransactions" :key="transaction.id">
         <td>{{transaction.date}}</td>
         <td>{{transaction.description}}</td>
         <td>{{transaction.category}}</td>
@@ -28,6 +28,12 @@ export default {
   name: 'TransactionView',
   props: {
     transactions: Array
+  },
+  computed: {
+    sortedTransactions() {
+      let transactionsCopy = this.transactions.slice(0);
+      return transactionsCopy.sort((a, b) => (a.date > b.date) ? 1 : -1);
+    }
   },
   methods: {
     remove(transaction) {

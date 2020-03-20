@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       minDate: "2020-02-01",
-      maxDate: "2020-02-29"
+      maxDate: "2020-12-31"
     }
   },
   computed: {
