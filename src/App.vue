@@ -12,6 +12,11 @@
       </div>
     </div>
     <router-view/>
+    <footer>
+    <a target="_blank" href="https://github.com/jfox97/saffron-console">
+      Lab 3b github
+    </a>
+  </footer>
   </div>
 </template>
 
@@ -28,6 +33,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 98vh;
 }
 
 #nav {
@@ -49,10 +57,26 @@ body {
 }
 
 #side a:hover {
-  color: #e02800;
+  color: #EC4E20;
 }
 
 #brand {
   margin-right: auto;
+}
+
+footer {
+  text-align: left;
+  margin-top: auto;
+  padding: 50px 0px 20px 50px;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #484e61;
+}
+
+footer a:hover {
+  color: #EC4E20;
 }
 </style>
